@@ -3,7 +3,7 @@ import SearchStuff from "./Components/SearchStuff";
 import DataDisplay from "./Components/DataDisplay";
 import "./App.css";
 
-async function getData(planetSearch) {
+async function getData(planetSearch: string) {
   const dataHolder = [];
   let data = await fetch(
     `https://swapi.dev/api/planets/?search=${planetSearch}`
@@ -24,8 +24,8 @@ async function getData(planetSearch) {
 
 function App() {
   const [myFilter, setMyFilter] = useState("");
-  const [fullData, setFullData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [fullData, setFullData] = useState<any[]>([]);
+  const [filteredData, setFilteredData] = useState<any[]>([]);
   const [excludeColumns, setExcludeColumns] = useState([
     "films",
     "edited",
@@ -55,11 +55,11 @@ function App() {
     filterData();
   }, [myFilter, fullData, excludeColumns]);
 
-  const handleValue = (e) => {
+  const handleValue = (e: Event) => {
     setMyFilter(e.target.value);
   };
 
-  const clickMe = (e) => {
+  const clickMe = (e: Event) => {
     e.preventDefault();
     getData(myFilter);
   };
@@ -67,11 +67,7 @@ function App() {
   return (
     <div className="App">
       Hello world
-      <SearchStuff
-        value={myFilter}
-        onSubmit={(e) => clickMe(e)}
-        change={handleValue}
-      />
+      <SearchStuff value={myFilter} onSubmit={clickMe} change={handleValue} />
       <DataDisplay planetList={filteredData} />
     </div>
   );

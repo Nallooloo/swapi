@@ -9,8 +9,19 @@ const PlanetCard = styled.div`
   flex-direction: row;
   text-align: left;
 `;
+export interface PlanetProps {
+  name: string;
+  orbital_period: string;
+  climate: string;
+  terrain: string;
+}
 
-const Planet = ({ name, orbital_period, climate, terrain }) => {
+const Planet: React.FC<PlanetProps> = ({
+  name,
+  orbital_period,
+  climate,
+  terrain,
+}) => {
   return (
     <PlanetCard>
       <div style={{ margin: "2px" }}>
