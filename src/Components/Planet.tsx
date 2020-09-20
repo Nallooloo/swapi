@@ -9,6 +9,7 @@ const PlanetCard = styled.div`
   flex-direction: row;
   text-align: left;
 `;
+
 export interface PlanetProps {
   name: string;
   orbital_period: string;

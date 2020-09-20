@@ -55,12 +55,12 @@ function App() {
     filterData();
   }, [myFilter, fullData, excludeColumns]);
 
-  const handleValue = (e: Event) => {
+  const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMyFilter(e.target.value);
   };
 
-  const clickMe = (e: Event) => {
-    e.preventDefault();
+  const clickMe = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     getData(myFilter);
   };
 

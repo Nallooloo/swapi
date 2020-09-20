@@ -1,6 +1,16 @@
 import React from "react";
 
-const SearchStuff = ({ change, onSubmit, value }) => (
+export interface SearchStuffProps {
+  change: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  value: string;
+}
+
+const SearchStuff: React.FC<SearchStuffProps> = ({
+  change,
+  onSubmit,
+  value,
+}) => (
   <form onSubmit={onSubmit}>
     <label>
       Search here for magic stuff:
