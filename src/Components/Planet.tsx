@@ -15,6 +15,7 @@ export interface PlanetProps {
   orbital_period: string;
   climate: string;
   terrain: string;
+  population: string;
 }
 
 const Planet: React.FC<PlanetProps> = ({
@@ -22,6 +23,7 @@ const Planet: React.FC<PlanetProps> = ({
   orbital_period,
   climate,
   terrain,
+  population,
 }) => {
   return (
     <PlanetCard>
@@ -43,6 +45,10 @@ const Planet: React.FC<PlanetProps> = ({
         <div>
           <strong>Terrain: </strong>
           {terrain}
+        </div>
+        <div>
+          <strong>Population: </strong>
+          {population}
         </div>
       </div>
     </PlanetCard>

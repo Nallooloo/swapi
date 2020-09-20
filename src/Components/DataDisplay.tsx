@@ -1,6 +1,8 @@
 import React from "react";
-import Planet from "./Planet";
-const DataDisplay: React.FC<{ planetList: any[] }> = ({ planetList }) => {
+import Planet, { PlanetProps } from "./Planet";
+const DataDisplay: React.FC<{ planetList: PlanetProps[] }> = ({
+  planetList,
+}) => {
   return (
     <div
       style={{
